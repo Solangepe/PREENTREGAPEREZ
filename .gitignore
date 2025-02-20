@@ -283,3 +283,7 @@ pyrightconfig.json
 .ionuro
 
 # Fin de https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,django
+__pycache__/
+*.pyc
+venv/
+db.sqlite3

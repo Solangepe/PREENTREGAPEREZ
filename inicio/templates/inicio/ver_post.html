@@ -1,0 +1,20 @@
+{% extends 'inicio/base.html' %}
+
+{% block content %}
+<h2>{{ post.titulo }}</h2>
+<p>{{ post.contenido }}</p>
+
+<h3>Comentarios</h3>
+<ul>
+    {% for comentario in comentarios %}
+        <li><strong>{{ comentario.autor }}:</strong> {{ comentario.texto }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Agregar comentario</h4>
+<form method="post">
+    {% csrf_token %}
+    {{ comentario_form.as_p }}
+    <button type="submit">Comentar</button>
+</form>
+{% endblock %}
